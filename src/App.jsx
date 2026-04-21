@@ -1,7 +1,21 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import DefaultLayout from './layouts/DefaultLayout'
+import HomePage from './pages/HomePage'
+import SingleFilm from './pages/singleFilm'
 
 
 function App() {
 
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route element={<DefaultLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/film/:id" element={<SingleFilm />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 
 }
 
