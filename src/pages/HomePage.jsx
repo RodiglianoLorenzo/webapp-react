@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function HomePage() {
 
@@ -6,12 +7,10 @@ export default function HomePage() {
 
     useEffect(() => {
         const api_url = import.meta.env.VITE_API_SERVER_ADDRESS + '/films'
-
         fetch(api_url)
             .then(response => response.json())
             .then(data => setFilms(data))
     }, [])
-
 
     return (
         <div>
@@ -20,6 +19,7 @@ export default function HomePage() {
                     <h2>{film.title}</h2>
                     <p>{film.genre}</p>
                     <p>{film.release_year}</p>
+                    <Link to={`/films/${film.id}`}>Dettaglio</Link> {/* ← aggiungi */}
                 </div>
             ))}
         </div>
