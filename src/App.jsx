@@ -3,7 +3,6 @@ import DefaultLayout from './layouts/DefaultLayout'
 import HomePage from './pages/HomePage'
 import SingleFilm from './pages/singleFilm'
 
-
 function App() {
 
   return (
