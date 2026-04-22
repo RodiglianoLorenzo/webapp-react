@@ -1,6 +1,108 @@
 @import url('bootstrap');
 
+/* ─── Base ─────────────────────────────────────────── */
 body {
     background-color: #1a1a2e;
     color: #e0e0e0;
+}
+
+/* ─── AppHeader ─────────────────────────────────────── */
+.app-header {
+    background: #16213e;
+    border-bottom: 2px solid #e94560;
+}
+
+.app-header .navbar-brand {
+    color: #e94560;
+    letter-spacing: 2px;
+}
+
+/* ─── AppFooter ─────────────────────────────────────── */
+.app-footer {
+    background: #16213e;
+    border-top: 1px solid #e94560;
+}
+
+.app-footer p {
+    color: #888;
+}
+
+/* ─── HomePage ──────────────────────────────────────── */
+.catalog-title {
+    color: #e94560;
+    letter-spacing: 1px;
+}
+
+.film-card {
+    background: #16213e;
+    border: 1px solid #0f3460;
+}
+
+.film-card .card-title {
+    color: #e0e0e0;
+}
+
+.film-card .card-text {
+    color: #888;
+}
+
+.film-card .card-footer {
+    border-top: 1px solid #0f3460;
+    background: transparent;
+}
+
+.btn-detail {
+    background: #e94560;
+    color: #fff;
+    border: none;
+}
+
+.btn-detail:hover {
+    background: #c73652;
+    color: #fff;
+}
+
+/* ─── SingleFilm ────────────────────────────────────── */
+.btn-back {
+    background: transparent;
+    border: 1px solid #e94560;
+    color: #e94560;
+}
+
+.btn-back:hover {
+    background: #e94560;
+    color: #fff;
+}
+
+.film-title {
+    color: #e0e0e0;
+}
+
+.film-meta {
+    color: #e94560;
+}
+
+.film-divider {
+    border-color: #0f3460;
+}
+
+.reviews-title {
+    color: #e0e0e0;
+}
+
+.review-card {
+    background: #16213e;
+    border: 1px solid #0f3460;
+}
+
+.review-author {
+    color: #e0e0e0;
+}
+
+.review-vote {
+    color: #e94560;
+}
+
+.review-text {
+    color: #888;
 }

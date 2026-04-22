@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-export default function singleFilm() {
+export default function SingleFilm() {
     const [film, setFilm] = useState(null);
     const { id } = useParams();
     const Server_Address = import.meta.env.VITE_API_SERVER_ADDRESS;
@@ -16,21 +16,21 @@ export default function singleFilm() {
         <div className="container py-5">
             {film && (
                 <>
-                    <Link to="/" className="btn btn-sm mb-4" style={{ background: 'transparent', border: '1px solid #e94560', color: '#e94560' }}>
+                    <Link to="/" className="btn btn-sm btn-back mb-4">
                         ← Torna alla lista
                     </Link>
-                    <h1 className="mb-1" style={{ color: '#e0e0e0' }}>{film.title}</h1>
-                    <p style={{ color: '#e94560' }}>{film.genre} · {film.release_year}</p>
-                    <hr style={{ borderColor: '#0f3460' }} />
-                    <h5 className="mt-4 mb-3" style={{ color: '#e0e0e0' }}>Recensioni</h5>
+                    <h1 className="film-title mb-1">{film.title}</h1>
+                    <p className="film-meta">{film.genre} · {film.release_year}</p>
+                    <hr className="film-divider" />
+                    <h5 className="reviews-title mt-4 mb-3">Recensioni</h5>
                     {film.reviews && film.reviews.map(review => (
-                        <div className="card mb-3" key={review.id} style={{ background: '#16213e', border: '1px solid #0f3460' }}>
+                        <div className="card review-card mb-3" key={review.id}>
                             <div className="card-body">
                                 <div className="d-flex justify-content-between mb-2">
-                                    <strong style={{ color: '#e0e0e0' }}>{review.name}</strong>
-                                    <span style={{ color: '#e94560' }}>{'★'.repeat(review.vote)}</span>
+                                    <strong className="review-author">{review.name}</strong>
+                                    <span className="review-vote">{'★'.repeat(review.vote)}</span>
                                 </div>
-                                <p className="mb-0" style={{ color: '#888' }}>{review.text}</p>
+                                <p className="review-text mb-0">{review.text}</p>
                             </div>
                         </div>
                     ))}
