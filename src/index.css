@@ -106,3 +106,51 @@ body {
 .review-text {
     color: #888;
 }
+
+/* ─── FormReview ────────────────────────────────────── */
+.review-form-container {
+    background: #16213e;
+    border: 1px solid #0f3460;
+    border-left: 4px solid #e94560;
+    /* Accento laterale */
+}
+
+.review-form-title {
+    color: #e94560;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Stile per input, select e textarea */
+.custom-input {
+    background-color: #1a1a2e !important;
+    border: 1px solid #0f3460 !important;
+    color: #e0e0e0 !important;
+}
+
+.custom-input:focus {
+    background-color: #1a1a2e !important;
+    border-color: #e94560 !important;
+    box-shadow: 0 0 0 0.25rem rgba(233, 69, 96, 0.25) !important;
+    color: #fff !important;
+}
+
+/* Colore del placeholder */
+.custom-input::placeholder {
+    color: #555;
+}
+
+/* Bottone di invio */
+.btn-submit {
+    background: #e94560;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #c73652;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(233, 69, 96, 0.3);
+}

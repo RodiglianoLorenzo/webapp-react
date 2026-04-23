@@ -1,15 +1,21 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-export default function SingleFilm() {
+import Formreview from '../components/Formreview';
+
+export default function singleFilm() {
     const [film, setFilm] = useState(null);
     const { id } = useParams();
     const Server_Address = import.meta.env.VITE_API_SERVER_ADDRESS;
 
-    useEffect(() => {
+    const getFilmData = () => {
         fetch(`${Server_Address}/films/${id}`)
             .then(response => response.json())
             .then(data => setFilm(data));
+    };
+
+    useEffect(() => {
+        getFilmData();
     }, [id])
 
     return (
@@ -34,6 +40,8 @@ export default function SingleFilm() {
                             </div>
                         </div>
                     ))}
+
+                    <Formreview movieId={id} onFormsubmite={getFilmData} />
                 </>
             )}
         </div>
