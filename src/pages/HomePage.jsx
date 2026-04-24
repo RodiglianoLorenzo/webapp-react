@@ -1,13 +1,19 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useLoader } from '../context/Contextuploader'
+
 
 export default function HomePage() {
     const [films, setFilms] = useState([])
 
+    const { setLoading } = useLoader();
+
     useEffect(() => {
+        setLoading(true)
         fetch('http://localhost:3000/films')
             .then(response => response.json())
             .then(data => setFilms(data))
+        setLoading(false)
     }, [])
 
     return (

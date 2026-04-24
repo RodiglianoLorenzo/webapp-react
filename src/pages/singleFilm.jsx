@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Uploader from '../components/Uploader'
-
+import { useLoader } from '../context/Contextuploader'
 import Formreview from '../components/Formreview';
 
 export default function singleFilm() {
     const [film, setFilm] = useState(null);
     const { id } = useParams();
+    const { setLoading } = useLoader();
     const Server_Address = import.meta.env.VITE_API_SERVER_ADDRESS;
 
     const getFilmData = () => {
@@ -16,15 +17,12 @@ export default function singleFilm() {
     };
 
     useEffect(() => {
+        setLoading(true)
         getFilmData();
+        setLoading(false)
     }, [id])
 
-    if (!film) {
-        return (
-            <Uploader></Uploader>
-        )
-
-    }
+    if (!film) return null
 
     return (
         <div className="container py-5">
