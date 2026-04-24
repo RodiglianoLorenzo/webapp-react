@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Uploader from '../components/Uploader'
 
 import Formreview from '../components/Formreview';
 
@@ -17,6 +18,13 @@ export default function singleFilm() {
     useEffect(() => {
         getFilmData();
     }, [id])
+
+    if (!film) {
+        return (
+            <Uploader></Uploader>
+        )
+
+    }
 
     return (
         <div className="container py-5">
